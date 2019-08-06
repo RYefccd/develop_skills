@@ -1,0 +1,6 @@
+
+Sphinx==2.0.1
+sphinx-rtd-theme==0.4.3
+recommonmark==0.5.0
+sphinx-autobuild==0.7.1
+jieba==0.39  # 中文搜索
