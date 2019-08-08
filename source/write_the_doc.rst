@@ -111,7 +111,7 @@ read the doc 风格文档
 
 修改配置:
 
-.. literalinclude:: examples/conf.py
+.. literalinclude:: examples/final_conf.py
    :language: python
    :lines: 67-72
    :linenos:
@@ -133,7 +133,7 @@ sphinx 默认支持 restructureText 格式, 如果需要支持 markdown 格式, 
    pip install recommonmark
 
 
-.. literalinclude:: examples/conf.py
+.. literalinclude:: examples/final_conf.py
    :language: python
    :lines: 31-35
    :linenos:
@@ -152,7 +152,7 @@ sphinx 默认支持 restructureText 格式, 如果需要支持 markdown 格式, 
    pip install nbsphinx
 
 
-.. literalinclude:: examples/conf.py
+.. literalinclude:: examples/final_conf.py
    :language: python
    :linenos:
    :lines: 42-48
@@ -170,7 +170,7 @@ sphinx 默认支持 restructureText 格式, 如果需要支持 markdown 格式, 
    pip install jieba
 
 
-.. literalinclude:: examples/conf.py
+.. literalinclude:: examples/final_conf.py
    :language: python
    :linenos:
    :lines: 28-29 
