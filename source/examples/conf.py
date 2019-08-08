@@ -22,7 +22,7 @@ copyright = '2019, captcha server developers'
 author = 'captcha server developers'
 
 # The full version, including alpha/beta/rc tags
-version = release = '2019.08.08'
+version = release = '0.0.1'
 
 
 # 支持中文搜索

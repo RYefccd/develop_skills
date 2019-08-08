@@ -6,10 +6,14 @@
 develop_skills
 ==========================================
 
+:Author: captcha developers group
+:Date: 2019-08-05T08:10:11.588674+08:00
+
+
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
-   :titlesonly:
+   :caption: topic
+
 
    write_the_doc
    db_concept
@@ -19,9 +23,24 @@ develop_skills
    data_clean
 
 
+
+.. _examples:
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+   :caption: 往期分享回顾
+
+   2019-05-25_gtday_answer_pandas.ipynb
+   2019-05-25_gtday_answer_spark.ipynb
+
 Indices and tables
 ==================
 
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+
+
+.. 注释例子　   :titlesonly:
