@@ -158,7 +158,6 @@ sphinx 默认支持 restructureText 格式, 如果需要支持 markdown 格式, 
    :lines: 42-48
 
 
-
 支持中文搜索
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 感谢黄奇鹏提供配置
@@ -175,6 +174,34 @@ sphinx 默认支持 restructureText 格式, 如果需要支持 markdown 格式, 
    :linenos:
    :lines: 28-29 
    :emphasize-lines: 2
+
+
+构建中文pdf
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+https://docs.readthedocs.io/en/stable/guides/pdf-non-ascii-languages.html
+
+
+For docs that are not written in Chinese or Japanese,
+and if your build fails from a Unicode error,
+then try ``xelatex`` as the ``latex_engine`` instead of the default ``pdflatex`` in your ``conf.py``:
+
+.. code-block:: python
+
+    latex_engine = 'xelatex'
+
+When Read the Docs detects that your documentation is in Chinese or Japanese,
+it automatically adds some defaults for you.
+
+For *Chinese* projects, it appends to your ``conf.py`` these settings:
+
+.. code-block:: python
+
+    latex_engine = 'xelatex'
+    latex_use_xindy = False
+    latex_elements = {
+        'preamble': '\\usepackage[UTF8]{ctex}\n',
+    }
 
 
 autobuild
