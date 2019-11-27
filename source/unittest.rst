@@ -1,7 +1,7 @@
 .. _unittest:
 
 
-03 unittest and pytest
+unittest and pytest
 ==========================================
 
 
@@ -79,6 +79,7 @@
 
 
 |  What is covered by Statement Coverage?
+
 1. Unused Statements
 #. Dead Code
 #. Unused Branches

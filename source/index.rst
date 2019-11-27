@@ -16,10 +16,10 @@ develop_skills
 
 
    write_the_doc
-   db_concept
    unittest
    logging
    debug
+   db_concept
    data_clean
 
 

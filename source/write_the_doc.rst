@@ -1,6 +1,6 @@
 .. _write_the_doc:
 
-01 write_the_doc
+write_the_doc
 ==========================================
 
 :Author: RYefccd
@@ -141,9 +141,30 @@ sphinx 默认支持 restructureText 格式, 如果需要支持 markdown 格式, 
 
 
 
+支持 markdown table 格式
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**感谢胡达聪提供协助**
+
+sphinx 默认支持 restructureText 格式, 如果需要支持 markdown 格式, 需要导入依赖和修改相关配置.
+目前 recommonmark 不支持 markdown table 的渲染, 如果需要支持, 请把 sphinx_markdown_tables 添加到 conf.py 配置文件中.
+
+依赖:
+
+.. code-block:: shell
+
+   pip instal sphinx-markdown-tables
+
+.. code-block:: python
+
+   extensions = [
+    'sphinx_markdown_tables',
+    ]
+   
+      
+
 支持ipynb(notebook)文件格式
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-感谢胡达聪提供协助
+**感谢胡达聪提供协助**
 
 依赖:
 
@@ -160,7 +181,7 @@ sphinx 默认支持 restructureText 格式, 如果需要支持 markdown 格式, 
 
 支持中文搜索
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-感谢黄奇鹏提供配置
+**感谢黄奇鹏提供配置**
 
 依赖:
 
@@ -206,10 +227,11 @@ For *Chinese* projects, it appends to your ``conf.py`` these settings:
 
 autobuild
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**感谢曹佳豪提供此技巧分享**
 
 在撰写文档时, 每次想要看到效果都要执行 make html 才能看到渲染的 html 文档. 为了能够
 提升编辑文档的效率, 建议使用 autobuild 扩展. 一旦我们修改相关的文档和 conf.py 配置时,
-就会自动触发构建. 感谢曹佳豪提供此技巧分享.     
+就会自动触发构建.     
 
 依赖:
 
