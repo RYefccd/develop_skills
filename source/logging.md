@@ -1,7 +1,8 @@
 ﻿
 
 
-> Written with [StackEdit](https://stackedit.io/).
+> Written with [StackEdit](https://stackedit.io/) by RYefccd in 2019-11-27T14:00:58.752295+08:00.
+
 
 #  logging
 
@@ -12,6 +13,12 @@
 日志就是追踪在软件运行时产生的事件的方法. 一般由该软件的开发人员将日志记录调用添加到其代码中, 以指示已发生某些事件. 
 
 对于我们公司来说, 开发借助日志进行调试, 测试使用日志校验逻辑和功能, 运维监控日志提供预警, 数据依赖日志分析行为偏好.
+
+作用如下:
+ - 信息搜集
+ - 故障排查
+ - 采样统计信息
+ - 审计
 
 因此, 日志记录是非常有必要的. 作为开发者, 我们需要重视并做好日志记录过程.
 
@@ -140,8 +147,7 @@ Format 和 LogRecord 的属性(Attribute)是一一对应的.
 请参考: [https://docs.python.org/3/library/logging.html#logrecord-attributes](https://docs.python.org/3/library/logging.html#logrecord-attributes)
 
 
-##  best practice
-
+##  日志模块详述
 
 ###  使用 logging 替代 print
 
@@ -149,7 +155,7 @@ Format 和 LogRecord 的属性(Attribute)是一一对应的.
 随着代码层级的加深和逻辑的复杂, 使用 print 很难满足多变的日志格式的需求,
 甚至你可能忘了去掉这些 print 语句. 各种信息混在一起, 使得日志的排查愈加困难.
 
-###  日志是单实例的
+###  日志(Logger)是单实例的
 
 同一个 Logger 在不同模块获得都是一个实例. 如下所示:
 
@@ -204,7 +210,7 @@ logging.getLogger('foo').addHandler(logging.NullHandler())
 
 It is strongly advised that you _do not add any handlers other than_  [`NullHandler`](https://docs.python.org/3/library/logging.handlers.html#logging.NullHandler "logging.NullHandler")  _to your library’s loggers_. This is because the configuration of handlers is the prerogative of the application developer who uses your library. The application developer knows their target audience and what handlers are most appropriate for their application: if you add handlers ‘under the hood’, you might well interfere with their ability to carry out unit tests and deliver logs which suit their requirements.
 
-###   Use __name__ as the logger name
+###   使用 __name__ 作为 Logger 名字
 这样可以使得 Logger 的名字和模块的名字统一. 可以用 Formatters 在日志中显示记录日志的模块, 行号. 便于定位程序逻辑的位置.
 并且如上面的例子所示, 恰好也满足日志的继承层级, 
 ```python
@@ -212,6 +218,16 @@ spam_foo=logging.getLogger("spam.foo")
 ```
 这样可以只给父类 Logger 设置 Handler, 那么模块中所有子子模块输出的日志都能输出.
 
+###   在应用中使用 basicConfig 日志配置
+
+在应用中有一个方便的初始化 root logger 的方法, **logging.basicConfig**.可以
+在应用程序启动时调用此方法, 然后按照 logger 的继承体系, 就可以搜集到所有logger输出的日志信息.
+
+[如果 root logger 没有定义任何 handler, 日志函数 debug, info, warning, error, critical 将会自动调用此函数](https://docs.python.org/3/library/logging.html#logging.basicConfig). [默认输出到标准错误(stderr)输出上](https://docs.python.org/3/howto/logging.html#advanced-logging-tutorial).
+```python
+import logging
+logging.basicConfig(filename='example.log',level=logging.DEBUG)
+```
 
 
 ###  多进程写日志
@@ -318,9 +334,19 @@ drwxrwxrwt 15 root    root    135168 11月 27 12:19 ../
 3. [https://docs.python.org/3/howto/logging-cookbook.html#logging-to-a-single-file-from-multiple-processes](https://docs.python.org/3/howto/logging-cookbook.html#logging-to-a-single-file-from-multiple-processes)
 
 
+##  best practice
 
+ - 日志记录要有意义.
+ - 日志记录最好包含上下文信息.
+ - 日志要结构化以及设计不同的层级, 便于解析和阅读
+ - 日志不能包含太少或者太多的信息.
+ - 复杂的应用可以分不同的应用或者模块输出到不同的日志文件中.
+ - 让日志适应开发, 测试, 线上不同的环境, 方便不同人员通过日志协同.
 
 ##  引用
 
-[Logging HOWTO](https://docs.python.org/3/howto/logging.html)
-[Logging in Python](https://realpython.com/python-logging/)
+ - [Logging HOWTO](https://docs.python.org/3/howto/logging.html)
+ - [Logging in Python](https://realpython.com/python-logging/)
+ - [Python logging tutorial](http://zetcode.com/python/logging/)
+
+
