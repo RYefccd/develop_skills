@@ -35,7 +35,7 @@
 
 组件交互图:
 
-![enter image description here](https://docs.python.org/3/_images/logging_flow.png)
+![logging flow](https://docs.python.org/3/_images/logging_flow.png)
 
 
 
@@ -348,5 +348,6 @@ drwxrwxrwt 15 root    root    135168 11月 27 12:19 ../
  - [Logging HOWTO](https://docs.python.org/3/howto/logging.html)
  - [Logging in Python](https://realpython.com/python-logging/)
  - [Python logging tutorial](http://zetcode.com/python/logging/)
-
+ - [Good logging practice in Python](https://fangpenlin.com/posts/2012/08/26/good-logging-practice-in-python/)
+ - [Python Logging Basics]([https://www.loggly.com/ultimate-guide/python-logging-basics/](https://www.loggly.com/ultimate-guide/python-logging-basics/))
 
