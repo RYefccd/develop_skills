@@ -20,7 +20,6 @@ develop_skills
    logging
    debug
    db_concept
-   data_clean
 
 
 
